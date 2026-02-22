@@ -1,0 +1,100 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Setup Complete | Launchpad Boost</title>
+    <link
+        href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600&family=Space+Grotesk:wght@400;600;700&display=swap"
+        rel="stylesheet">
+    <script src="https://unpkg.com/@phosphor-icons/web"></script>
+    <link rel="stylesheet" href="styles.css">
+</head>
+
+<body style="background-color: var(--bg-surface);">
+
+    <header>
+        <div class="container">
+            <a href="index.html" class="logo">
+                <img src="logo.png" alt="Launchpad Boost" class="logo-img">
+            </a>
+        </div>
+    </header>
+
+    <div style="padding-top: 120px; padding-bottom: 4rem;">
+        <div class="form-card" style="text-align: center; max-width: 600px;">
+            <div
+                style="width: 80px; height: 80px; background: #DCFCE7; color: #166534; border-radius: 50%; display: flex; align-items: center; justify-content: center; margin: 0 auto 1.5rem;">
+                <i class="ph-fill ph-check" style="font-size: 3rem;"></i>
+            </div>
+
+            <h1>Setup Complete!</h1>
+            <p class="text-muted" style="margin-bottom: 2rem; font-size: 1.1rem;">
+                Your business profile has been created. Our automated engine has already started optimizing your Google
+                Business Profile.
+            </p>
+
+            <div
+                style="background: rgba(124, 58, 237, 0.05); padding: 2rem; border-radius: var(--radius-main); border: 1px solid var(--accent-dim); margin-bottom: 2rem;">
+                <h3 style="margin-bottom: 1rem; color: var(--accent-primary);">Get Your Weekly Rank Reports</h3>
+                <p class="text-muted" style="font-size: 0.95rem; margin-bottom: 1.5rem;">
+                    Enter the email where you want to receive your SEO progress reports and lead notifications.
+                </p>
+
+                <form onsubmit="subscribeUpdates(event)"
+                    style="display: flex; gap: 0.5rem; max-width: 400px; margin: 0 auto;">
+                    <input type="email" id="updateEmail" class="form-input" placeholder="Enter your email" required
+                        style="flex: 1;">
+                    <button type="submit" class="btn btn-primary">Subscribe</button>
+                </form>
+                <p id="subSuccess" style="color: #166534; font-size: 0.9rem; margin-top: 1rem; display: none;">
+                    <i class="ph-bold ph-check"></i> Subscribed successfully!
+                </p>
+            </div>
+
+            <div
+                style="text-align: left; background: white; padding: 1.5rem; border-radius: 8px; border: 1px solid var(--border-light);">
+                <p style="font-weight: 600; margin-bottom: 0.75rem;">What happens next:</p>
+                <div style="display: flex; gap: 0.75rem; margin-bottom: 0.75rem;">
+                    <i class="ph-fill ph-number-circle-one text-accent" style="font-size: 1.25rem;"></i>
+                    <span class="text-muted">We will request manager access via email to your Google Profile.</span>
+                </div>
+                <div style="display: flex; gap: 0.75rem; margin-bottom: 0.75rem;">
+                    <i class="ph-fill ph-number-circle-two text-accent" style="font-size: 1.25rem;"></i>
+                    <span class="text-muted">Once approved, our system begins the optimization process.</span>
+                </div>
+                <div style="display: flex; gap: 0.75rem;">
+                    <i class="ph-fill ph-number-circle-three text-accent" style="font-size: 1.25rem;"></i>
+                    <span class="text-muted">You will receive your first ranking report in 24 hours.</span>
+                </div>
+            </div>
+
+            <div style="margin-top: 2rem;">
+                <a href="admin.html" style="color: var(--text-muted); font-size: 0.9rem; text-decoration: underline;">
+                    Access Admin Dashboard (Simulation)
+                </a>
+            </div>
+        </div>
+    </div>
+
+    <script>
+        function subscribeUpdates(e) {
+            e.preventDefault();
+            const btn = e.target.querySelector('button');
+            const email = document.getElementById('updateEmail').value;
+
+            const originalText = btn.innerText;
+            btn.innerText = 'Subscribing...';
+
+            setTimeout(() => {
+                btn.innerText = originalText;
+                document.getElementById('subSuccess').style.display = 'block';
+                // Logic to save this email would go here (e.g., updating the profile in localStorage)
+                // For now, it's just a visual confirmation as requested.
+            }, 1000);
+        }
+    </script>
+</body>
+
+</html>

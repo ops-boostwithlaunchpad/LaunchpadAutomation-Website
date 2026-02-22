@@ -1,0 +1,196 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Onboarding | Launchpad Boost</title>
+    <link
+        href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600&family=Space+Grotesk:wght@400;600;700&display=swap"
+        rel="stylesheet">
+    <script src="https://unpkg.com/@phosphor-icons/web"></script>
+    <link rel="stylesheet" href="styles.css">
+</head>
+
+<body style="background-color: var(--bg-surface);">
+
+    <!-- Simple Header -->
+    <header>
+        <div class="container">
+            <a href="index.html" class="logo">
+                <img src="logo.png" alt="Launchpad Boost" class="logo-img">
+            </a>
+            <div class="secure-text" style="font-size: 0.9rem; color: #94A3B8;">
+                <i class="ph-fill ph-lock-key text-accent"></i> Secure Session
+            </div>
+        </div>
+    </header>
+
+    <div style="padding-top: 100px;">
+        <div class="progress-container">
+            <div class="progress-bar-bg">
+                <div class="progress-bar-fill" id="progressBar" style="width: 10%;"></div>
+            </div>
+            <div class="step-indicator">
+                <span id="stepLabel">Step 1 of 6</span>
+                <span>Business Setup</span>
+            </div>
+        </div>
+
+        <!-- Form Success Message (Hidden by default) -->
+        <div id="successPanel" class="form-card" style="display: none; text-align: center;">
+            <div
+                style="width: 80px; height: 80px; background: #DCFCE7; color: #166534; border-radius: 50%; display: flex; align-items: center; justify-content: center; margin: 0 auto 1.5rem;">
+                <i class="ph-fill ph-check" style="font-size: 3rem;"></i>
+            </div>
+            <h2>Setup Complete!</h2>
+            <p class="text-muted" style="margin-bottom: 2rem;">
+                Your business profile has been created. Our automated engine has already started optimizing your Google
+                Business Profile.
+            </p>
+            <div
+                style="background: var(--bg-surface); padding: 1.5rem; border-radius: var(--radius-main); margin-bottom: 2rem;">
+                <p style="font-weight: 600; margin-bottom: 0.5rem;">Next Steps:</p>
+                <ul style="list-style: none; text-align: left; max-width: 400px; margin: 0 auto; padding-left: 1rem;">
+                    <li style="margin-bottom: 0.5rem;"><i class="ph-fill ph-check-circle text-accent"></i> Check your
+                        email for login details</li>
+                    <li style="margin-bottom: 0.5rem;"><i class="ph-fill ph-check-circle text-accent"></i> We will
+                        request manager access via email</li>
+                    <li style="margin-bottom: 0.5rem;"><i class="ph-fill ph-check-circle text-accent"></i> First rank
+                        report arrives in 24 hours</li>
+                </ul>
+            </div>
+            <a href="admin.html" class="btn btn-primary">Go to Dashboard (Simulation)</a>
+        </div>
+
+        <!-- Multi-Step Form Container -->
+        <form id="onboardingForm" onsubmit="event.preventDefault();" class="form-card">
+
+            <!-- Step 1: Basic Info -->
+            <div class="form-step" data-step="1">
+                <h2 class="mb-2">Tell us about your business</h2>
+                <div class="form-group">
+                    <label class="form-label">Business Name</label>
+                    <input type="text" name="businessName" class="form-input" placeholder="e.g. Joe's Plumbing"
+                        required>
+                </div>
+                <div class="form-group">
+                    <label class="form-label">Primary Category</label>
+                    <input type="text" name="category" class="form-input" placeholder="e.g. Plumber, Dentist, Lawyer"
+                        required>
+                </div>
+                <div class="form-group">
+                    <label class="form-label">Description</label>
+                    <textarea name="description" class="form-textarea" rows="3"
+                        placeholder="Briefly describe what you do..."></textarea>
+                </div>
+            </div>
+
+            <!-- Step 2: Contact Info -->
+            <div class="form-step" data-step="2" style="display: none;">
+                <h2 class="mb-2">Contact Details</h2>
+                <div class="grid-3" style="grid-template-columns: 1fr 1fr; margin-top: 0; gap: 1rem;">
+                    <div class="form-group">
+                        <label class="form-label">Primary Phone</label>
+                        <input type="tel" name="phone" class="form-input" required>
+                    </div>
+                    <div class="form-group">
+                        <label class="form-label">Email Address</label>
+                        <input type="email" name="email" class="form-input" required>
+                    </div>
+                </div>
+                <div class="form-group">
+                    <label class="form-label">Website</label>
+                    <input type="url" name="website" class="form-input" placeholder="https://">
+                </div>
+            </div>
+
+            <!-- Step 3: Location -->
+            <div class="form-step" data-step="3" style="display: none;">
+                <h2 class="mb-2">Location</h2>
+                <div class="form-group">
+                    <label class="form-label">Street Address</label>
+                    <input type="text" name="address" class="form-input" required>
+                </div>
+                <div class="grid-3" style="grid-template-columns: 1fr 1fr 1fr; margin-top: 0; gap: 1rem;">
+                    <div class="form-group">
+                        <label class="form-label">City</label>
+                        <input type="text" name="city" class="form-input" required>
+                    </div>
+                    <div class="form-group">
+                        <label class="form-label">State</label>
+                        <input type="text" name="state" class="form-input" required>
+                    </div>
+                    <div class="form-group">
+                        <label class="form-label">Zip Code</label>
+                        <input type="text" name="zip" class="form-input" required>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Step 4: Hours -->
+            <div class="form-step" data-step="4" style="display: none;">
+                <h2 class="mb-2">Business Hours</h2>
+                <p class="text-muted" style="margin-bottom: 1.5rem;">Standard hours (9 AM - 5 PM) applied. You can edit
+                    this later.</p>
+                <div style="padding: 1rem; background: var(--bg-surface); border-radius: 6px;">
+                    <div style="display: flex; justify-content: space-between; margin-bottom: 0.5rem;">
+                        <span>Monday - Friday</span>
+                        <span>09:00 - 17:00</span>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Step 5: Keywords (The AI Step) -->
+            <div class="form-step" data-step="5" style="display: none;">
+                <h2 class="mb-2">Target Keywords</h2>
+                <p class="text-muted" style="margin-bottom: 1.5rem;">Our AI recommends these keywords based on your
+                    category and city.</p>
+
+                <div id="keywordLoader" style="text-align: center; padding: 2rem;">
+                    <i class="ph-bold ph-spinner ph-spin text-accent" style="font-size: 2rem;"></i>
+                    <p class="mt-1">Analyzing search volume...</p>
+                </div>
+
+                <div id="keywordResults" style="display: none;">
+                    <div class="grid-3"
+                        style="grid-template-columns: repeat(auto-fill, minmax(150px, 1fr)); gap: 0.5rem; margin-top: 0;"
+                        id="keywordTags">
+                    </div>
+                </div>
+            </div>
+
+            <!-- Step 6: Confirmation -->
+            <div class="form-step" data-step="6" style="display: none;">
+                <h2 class="mb-2">Final Step: Authorization</h2>
+                <p class="text-muted">To optimize your profile, we need manager access.</p>
+
+                <div
+                    style="background: rgba(124, 58, 237, 0.05); border: 1px solid var(--accent-secondary); padding: 1.5rem; border-radius: var(--radius-main); margin-bottom: 1.5rem;">
+                    <label style="display: flex; gap: 1rem; align-items: flex-start; cursor: pointer;">
+                        <input type="checkbox" required style="margin-top: 0.3rem;">
+                        <span style="font-size: 0.95rem; line-height: 1.5;">
+                            I authorize Launchpad Boost to manage my Google Business Profile listings.
+                        </span>
+                    </label>
+                </div>
+            </div>
+
+            <!-- Buttons -->
+            <div class="form-actions"
+                style="margin-top: 2rem; display: flex; justify-content: space-between; border-top: 1px solid var(--border-light); padding-top: 1.5rem;">
+                <button type="button" class="btn btn-outline" id="prevBtn" style="display: none;"
+                    onclick="changeStep(-1)">Back</button>
+                <button type="button" class="btn btn-primary" id="nextBtn" onclick="nextStep()"
+                    style="margin-left: auto;">Next Step</button>
+                <button type="submit" class="btn btn-gradient" id="submitBtn"
+                    style="display: none; margin-left: auto;">Complete Setup</button>
+            </div>
+
+        </form>
+    </div>
+
+    <script src="script.js"></script>
+</body>
+
+</html>

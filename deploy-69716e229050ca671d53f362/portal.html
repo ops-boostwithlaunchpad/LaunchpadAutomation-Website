@@ -1,0 +1,201 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>The Portal | Launchpad Automation</title>
+    <link
+        href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600&family=Space+Grotesk:wght@400;600;700&display=swap"
+        rel="stylesheet">
+    <script src="https://unpkg.com/@phosphor-icons/web"></script>
+    <link rel="stylesheet" href="styles.css">
+    <script src="script.js"></script>
+</head>
+
+<body>
+    <header>
+        <div class="container">
+            <a href="index.html" class="logo">
+                <img src="header-logo.png" alt="Launchpad Automation">
+            </a>
+
+            <nav class="nav-center">
+                <a href="index.html">Home</a>
+                <a href="solutions.html">Solutions</a>
+                <a href="portal.html" class="active">The Portal</a>
+                <a href="pricing.html">Pricing</a>
+            </nav>
+
+            <div class="header-right">
+                <a href="contact.html" class="btn-nav-cta">Book Discovery</a>
+                <button class="mobile-menu-toggle">
+                    <i class="ph ph-list"></i>
+                </button>
+            </div>
+        </div>
+
+        <!-- Mobile Menu -->
+        <div class="mobile-menu">
+            <a href="index.html" style="padding: 0.5rem 0; color: #475569;">Home</a>
+            <a href="solutions.html" style="padding: 0.5rem 0; color: #475569;">Solutions</a>
+            <a href="portal.html" class="active" style="padding: 0.5rem 0; font-weight: 600;">The Portal</a>
+            <a href="pricing.html" style="padding: 0.5rem 0; color: #475569;">Pricing</a>
+            <a href="contact.html" class="btn-primary" style="margin-top: 1rem; text-align: center;">Book Discovery</a>
+        </div>
+    </header>
+
+    <main>
+        <section class="hero" style="padding-bottom: 2rem;">
+            <div class="container hero-box">
+                <h1>Your Custom Analytics Portal</h1>
+                <p class="hero-subtitle">Most AI agents are "black boxes" — you don't know if they are working until
+                    something breaks. We solve this with a dedicated, custom-built dashboard for every client.</p>
+            </div>
+        </section>
+
+        <!-- Deep Dive Features -->
+        <section style="padding: 2rem 0;">
+            <div class="container">
+                <div class="feature-list-grid">
+                    <div class="feature-item">
+                        <i class="ph-fill ph-chart-line-up text-accent"
+                            style="font-size: 2rem; margin-bottom: 1rem;"></i>
+                        <h3>Transparency & trust</h3>
+                        <p class="text-muted">See exactly what your AI agent is doing, when it's doing it, and the
+                            results it's generating. View live logs of every decision the AI makes, ensuring you always
+                            maintain control and visibility.</p>
+                    </div>
+                    <div class="feature-item">
+                        <i class="ph-fill ph-target text-accent" style="font-size: 2rem; margin-bottom: 1rem;"></i>
+                        <h3>Business Impact Metrics</h3>
+                        <p class="text-muted">Track the metrics that matter: revenue generated, time saved, leads
+                            converted, clients retained. We don't just show you "uptime", we show you dollars saved and
+                            earned.</p>
+                    </div>
+                    <div class="feature-item">
+                        <i class="ph-fill ph-sliders-horizontal text-accent"
+                            style="font-size: 2rem; margin-bottom: 1rem;"></i>
+                        <h3>Human-in-the-Loop Controls</h3>
+                        <p class="text-muted">For sensitive workflows, the agent will "pause" and request approval via
+                            the Portal. You can approve, edit, or reject the AI's proposed action with a single click.
+                        </p>
+                    </div>
+                    <div class="feature-item">
+                        <i class="ph-fill ph-clock-counter-clockwise text-accent"
+                            style="font-size: 2rem; margin-bottom: 1rem;"></i>
+                        <h3>Evolution Tracking</h3>
+                        <p class="text-muted">AI models drift and improve. Our analysis tools show how your agent's
+                            accuracy has improved week-over-week, justifying the ROI of your automation investment.</p>
+                    </div>
+                    <div class="feature-item">
+                        <i class="ph-fill ph-export text-accent" style="font-size: 2rem; margin-bottom: 1rem;"></i>
+                        <h3>Data Sovereignty</h3>
+                        <p class="text-muted">Your data is your data. Export everything to CSV, JSON, or connect
+                            directly to your data warehouse via our API. We believe in zero lock-in.</p>
+                    </div>
+                    <div class="feature-item">
+                        <i class="ph-fill ph-users text-accent" style="font-size: 2rem; margin-bottom: 1rem;"></i>
+                        <h3>Role-Based Access</h3>
+                        <p class="text-muted">Give your CFO access to the ROI view, your Ops manager access to the Logs,
+                            and your Sales VP limits on lead routing rules. Granular permissioning included.</p>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Technical Specs / Security (New) -->
+        <section style="background: #111; padding: 4rem 0;">
+            <div class="container">
+                <h2 style="margin-bottom: 2rem;">Technical Specifications</h2>
+                <div style="display: grid; grid-template-columns: 1fr 1fr; gap: 4rem; align-items: center;">
+                    <div>
+                        <ul class="pricing-features">
+                            <li style="font-size: 1.1rem; color: #fff; margin-bottom: 1.5rem;"><i
+                                    class="ph-bold ph-shield-check"></i> <strong>SOC 2 Type II Compliant</strong>
+                                Infrastructure</li>
+                            <li style="font-size: 1.1rem; color: #fff; margin-bottom: 1.5rem;"><i
+                                    class="ph-bold ph-lock-key"></i> <strong>AES-256 Encryption</strong> at rest and in
+                                transit</li>
+                            <li style="font-size: 1.1rem; color: #fff; margin-bottom: 1.5rem;"><i
+                                    class="ph-bold ph-server"></i> <strong>Single-Tenant Deployment</strong> options
+                                available</li>
+                            <li style="font-size: 1.1rem; color: #fff; margin-bottom: 1.5rem;"><i
+                                    class="ph-bold ph-cloud-check"></i> <strong>99.9% Uptime SLA</strong> guarantee</li>
+                        </ul>
+                    </div>
+                    <div class="callout-box"
+                        style="margin: 0; background: rgba(255,255,255,0.05); border-left-color: var(--text-muted);">
+                        <h4>Why a custom portal?</h4>
+                        <p class="text-muted mt-1">Generic AI tools like ChatGPT or Zapier logs are messy and technical.
+                            Your stakeholders need a polished, business-ready view of what the automation is
+                            accomplishing. Our portal bridges the gap between code and business value.</p>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Service Deliverables -->
+        <section class="process-section" style="background: rgba(255,255,255,0.02);">
+            <div class="container">
+                <h2 style="text-align: center; margin-bottom: 3rem;">What's Included in the Service</h2>
+                <div class="process-grid">
+                    <div class="process-card">
+                        <h3>Complete Documentation</h3>
+                        <p class="text-muted mt-1">We don't just hand over keys. We provide video walkthroughs, written
+                            SOPs, and technical diagrams of exactly how your agent works.</p>
+                    </div>
+                    <div class="process-card">
+                        <h3>Team Training</h3>
+                        <p class="text-muted mt-1">We run live workshops with your team to ensure they know how to
+                            interact with the agent and interpret the portal data.</p>
+                    </div>
+                    <div class="process-card">
+                        <h3>Ongoing Support</h3>
+                        <p class="text-muted mt-1">Included with monthly subscription: bug fixes, API updates (when
+                            OpenAI changes things), and prompt optimizations.</p>
+                    </div>
+                    <div class="process-card">
+                        <h3>Monthly Strategy Call</h3>
+                        <p class="text-muted mt-1">We meet monthly to review the agent's performance and discuss new
+                            features. Your agent grows as your business grows.</p>
+                    </div>
+                </div>
+            </div>
+        </section>
+    </main>
+
+    <footer>
+        <div class="container">
+            <div class="footer-grid">
+                <div class="footer-col">
+                    <h4>Launchpad Automation</h4>
+                    <p>We run a marketing agency ourselves. We understand the pressure of client
+                        retention and manual processes. We build what we'd want.</p>
+                </div>
+                <div class="footer-col">
+                    <h4>Sitemap</h4>
+                    <a href="index.html">Home</a>
+                    <a href="solutions.html">Solutions</a>
+                    <a href="portal.html">The Portal</a>
+                    <a href="pricing.html">Pricing</a>
+                </div>
+                <div class="footer-col">
+                    <h4>Legal</h4>
+                    <a href="#">Privacy Policy</a>
+                    <a href="#">Terms of Service</a>
+                </div>
+                <div class="footer-col">
+                    <h4>Contact</h4>
+                    <a href="contact.html">Schedule Call</a>
+                    <p style="color: #94A3B8; margin-top: 12px;">Palm Beach, USA</p>
+                </div>
+            </div>
+            <div class="footer-bottom">
+                &copy; 2025 Launchpad Automation. All rights reserved.
+            </div>
+        </div>
+    </footer>
+</body>
+
+</html>

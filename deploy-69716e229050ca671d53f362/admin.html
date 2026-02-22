@@ -1,0 +1,247 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Admin | Launchpad Boost</title>
+    <link
+        href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600&family=Space+Grotesk:wght@400;600;700&display=swap"
+        rel="stylesheet">
+    <script src="https://unpkg.com/@phosphor-icons/web"></script>
+    <link rel="stylesheet" href="styles.css">
+    <style>
+        .admin-view {
+            display: none;
+        }
+
+        .admin-view.active {
+            display: block;
+        }
+
+        .nav-item {
+            justify-content: flex-start;
+            border-color: transparent;
+            color: #94A3B8;
+            cursor: pointer;
+        }
+
+        .nav-item.active {
+            background: rgba(255, 255, 255, 0.1);
+            color: white;
+        }
+
+        .nav-item:hover {
+            color: white;
+        }
+    </style>
+</head>
+
+<body style="background-color: var(--bg-surface);">
+
+    <!-- Login Overlay -->
+    <div id="loginOverlay"
+        style="position: fixed; inset: 0; background: #0F172A; z-index: 2000; display: flex; align-items: center; justify-content: center;">
+        <div class="form-card" style="width: 100%; max-width: 400px; padding: 2rem;">
+            <div style="text-align: center; margin-bottom: 2rem;">
+                <img src="logo.png" alt="Admin" style="height: 48px; margin-bottom: 1rem;">
+                <h2 style="color: var(--text-primary);">Admin Access</h2>
+            </div>
+            <form onsubmit="adminLogin(event)">
+                <div class="form-group">
+                    <label class="form-label">Password</label>
+                    <input type="password" id="adminPass" class="form-input" placeholder="Enter password (TEST)"
+                        required>
+                </div>
+                <button type="submit" class="btn btn-primary" style="width: 100%;">Login</button>
+            </form>
+        </div>
+    </div>
+
+    <!-- Manual Add Modal -->
+    <div id="addModal"
+        style="display: none; position: fixed; inset: 0; background: rgba(15,23,42,0.8); z-index: 1500; align-items: center; justify-content: center;">
+        <div class="form-card" style="width: 100%; max-width: 500px; padding: 2rem; position: relative;">
+            <button onclick="document.getElementById('addModal').style.display='none'"
+                style="position: absolute; top: 1rem; right: 1rem; background: none; border: none; font-size: 1.5rem; cursor: pointer;">&times;</button>
+            <h2 class="mb-2">Add Business Manually</h2>
+            <form onsubmit="manualAddSubmit(event)">
+                <div class="form-group">
+                    <label class="form-label">Business Name</label>
+                    <input type="text" name="businessName" class="form-input" required>
+                </div>
+                <div class="form-group">
+                    <label class="form-label">Category</label>
+                    <input type="text" name="category" class="form-input" required>
+                </div>
+                <div class="form-group">
+                    <label class="form-label">Email</label>
+                    <input type="email" name="email" class="form-input" required>
+                </div>
+                <div class="form-group">
+                    <label class="form-label">City</label>
+                    <input type="text" name="city" class="form-input" required>
+                </div>
+                <button type="submit" class="btn btn-primary" style="width: 100%;">Add Profile</button>
+            </form>
+        </div>
+    </div>
+
+    <!-- Sidebar -->
+    <div class="admin-sidebar" id="adminSidebar">
+        <div style="display: flex; align-items: center; gap: 0.75rem; margin-bottom: 3rem;">
+            <img src="logo.png" alt="Logo" style="height: 32px; filter: brightness(0) invert(1);">
+            <span style="font-weight: 700; font-family: 'Space Grotesk'; font-size: 1.1rem;">Boost Admin</span>
+        </div>
+
+        <nav style="display: flex; flex-direction: column; gap: 0.5rem;">
+            <div onclick="switchAdminView('overview')" class="btn btn-outline nav-item active" id="nav-overview">
+                <i class="ph-fill ph-users" style="margin-right: 0.75rem;"></i> Business Profiles
+            </div>
+            <div onclick="switchAdminView('newsletter')" class="btn btn-outline nav-item" id="nav-newsletter">
+                <i class="ph-fill ph-envelope-simple" style="margin-right: 0.75rem;"></i> Newsletter
+            </div>
+            <div onclick="switchAdminView('analytics')" class="btn btn-outline nav-item" id="nav-analytics">
+                <i class="ph-fill ph-chart-line-up" style="margin-right: 0.75rem;"></i> Analytics
+            </div>
+            <div onclick="adminLogout()" class="btn btn-outline nav-item" style="margin-top: auto;">
+                <i class="ph-fill ph-sign-out" style="margin-right: 0.75rem;"></i> Logout
+            </div>
+        </nav>
+    </div>
+
+    <!-- Main Content -->
+    <div class="admin-main" id="adminMain">
+
+        <!-- View: Overview -->
+        <div id="view-overview" class="admin-view active">
+            <header style="padding: 1rem 0; margin-bottom: 2rem;">
+                <div style="display: flex; justify-content: space-between; align-items: center;">
+                    <h1 style="font-size: 2rem;">Overview</h1>
+                    <div style="display: flex; gap: 1rem;">
+                        <input type="text" class="form-input" placeholder="Search businesses..."
+                            style="width: 250px; background: white;">
+                        <button class="btn btn-primary"
+                            onclick="document.getElementById('addModal').style.display='flex'"><i
+                                class="ph-bold ph-plus"></i> Manual Add</button>
+                    </div>
+                </div>
+            </header>
+
+            <div class="grid-3" style="gap: 1.5rem; margin-bottom: 2rem; margin-top: 0;">
+                <div class="card" style="padding: 1.5rem; display: flex; align-items: center; gap: 1rem;">
+                    <div
+                        style="width: 48px; height: 48px; background: #DCFCE7; color: #166534; border-radius: 8px; display: flex; align-items: center; justify-content: center;">
+                        <i class="ph-fill ph-users" style="font-size: 1.5rem;"></i>
+                    </div>
+                    <div>
+                        <div class="text-muted" style="font-size: 0.875rem;">Active Businesses</div>
+                        <div style="font-weight: 700; font-size: 1.5rem;" id="activeCount">0</div>
+                    </div>
+                </div>
+                <div class="card" style="padding: 1.5rem; display: flex; align-items: center; gap: 1rem;">
+                    <div
+                        style="width: 48px; height: 48px; background: #E0E7FF; color: #3730A3; border-radius: 8px; display: flex; align-items: center; justify-content: center;">
+                        <i class="ph-fill ph-chart-bar" style="font-size: 1.5rem;"></i>
+                    </div>
+                    <div>
+                        <div class="text-muted" style="font-size: 0.875rem;">Total Keywords Ranked</div>
+                        <div style="font-weight: 700; font-size: 1.5rem;" id="keywordCount">0</div>
+                    </div>
+                </div>
+            </div>
+
+            <div class="card" style="padding: 0; overflow: hidden;">
+                <div style="padding: 1.5rem; border-bottom: 1px solid var(--border-light); font-weight: 600;">
+                    Recent Submissions
+                </div>
+                <div style="overflow-x: auto;">
+                    <table style="width: 100%; border-collapse: collapse; font-size: 0.95rem;">
+                        <thead style="background: #F8FAFC; color: var(--text-secondary); text-align: left;">
+                            <tr>
+                                <th style="padding: 1rem 1.5rem; font-weight: 500;">Business Name</th>
+                                <th style="padding: 1rem 1.5rem; font-weight: 500;">Category</th>
+                                <th style="padding: 1rem 1.5rem; font-weight: 500;">Location</th>
+                                <th style="padding: 1rem 1.5rem; font-weight: 500;">Keywords</th>
+                                <th style="padding: 1rem 1.5rem; font-weight: 500;">Status</th>
+                            </tr>
+                        </thead>
+                        <tbody id="businessTableBody"></tbody>
+                    </table>
+                </div>
+                <div id="emptyState" style="padding: 4rem; text-align: center; display: none;">
+                    <div
+                        style="width: 64px; height: 64px; background: #F1F5F9; border-radius: 50%; display: flex; align-items: center; justify-content: center; margin: 0 auto 1rem; color: var(--text-muted);">
+                        <i class="ph-fill ph-tray" style="font-size: 2rem;"></i>
+                    </div>
+                    <h3 style="font-size: 1.1rem; margin-bottom: 0.5rem;">No Profiles Yet</h3>
+                    <p class="text-muted">Go through the onboarding flow to create the first record.</p>
+                </div>
+            </div>
+        </div>
+
+        <!-- View: Newsletter -->
+        <div id="view-newsletter" class="admin-view">
+            <header style="padding: 1rem 0; margin-bottom: 2rem;">
+                <h1 style="font-size: 2rem;">Weekly Newsletter</h1>
+            </header>
+            <div class="card" style="max-width: 800px;">
+                <div class="form-group">
+                    <label class="form-label">Subject Line</label>
+                    <input type="text" class="form-input" value="Your Weekly Rank Report 📈">
+                </div>
+                <div class="form-group">
+                    <label class="form-label">Body Content</label>
+                    <textarea class="form-textarea" rows="8">Hi {{businessName}},
+
+Here is your optimization report for this week. We have secured 5 new local citations and optimized your GMB profile description.
+
+Your keyword rankings are trending up!
+
+- Launchpad Boost Team</textarea>
+                    <p class="text-muted" style="font-size: 0.8rem; margin-top: 0.5rem;">Available variables:
+                        {{businessName}}, {{city}}</p>
+                </div>
+                <button class="btn btn-primary" onclick="alert('Newsletter sent to all active businesses!')">
+                    <i class="ph-bold ph-paper-plane-right" style="margin-right: 0.5rem;"></i> Send Now
+                </button>
+            </div>
+        </div>
+
+        <!-- View: Analytics -->
+        <div id="view-analytics" class="admin-view">
+            <header style="padding: 1rem 0; margin-bottom: 2rem;">
+                <h1 style="font-size: 2rem;">Platform Analytics</h1>
+            </header>
+            <div class="grid-3" style="gap: 1.5rem;">
+                <div class="card" style="padding: 2rem; text-align: center;">
+                    <h3 style="font-size: 3rem; color: var(--accent-primary); margin-bottom: 0.5rem;">98%</h3>
+                    <p class="text-muted">Retention Rate</p>
+                </div>
+                <div class="card" style="padding: 2rem; text-align: center;">
+                    <h3 style="font-size: 3rem; color: #10B981; margin-bottom: 0.5rem;">$15k</h3>
+                    <p class="text-muted">Monthly Revenue (Simulated)</p>
+                </div>
+                <div class="card" style="padding: 2rem; text-align: center;">
+                    <h3 style="font-size: 3rem; color: #F59E0B; margin-bottom: 0.5rem;">12.5%</h3>
+                    <p class="text-muted">Conversion Rate</p>
+                </div>
+            </div>
+        </div>
+
+    </div>
+
+    <!-- Script loaded at end -->
+    <script src="script.js"></script>
+    <script>
+        // Init Admin
+        document.addEventListener('DOMContentLoaded', () => {
+            if (localStorage.getItem('adminAuth') === 'true') {
+                document.getElementById('loginOverlay').style.display = 'none';
+                loadDashboard();
+            }
+        });
+    </script>
+</body>
+
+</html>

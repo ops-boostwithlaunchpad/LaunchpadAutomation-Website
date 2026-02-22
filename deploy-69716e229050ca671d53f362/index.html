@@ -1,0 +1,330 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Launchpad Automation | Custom AI for Agencies</title>
+    <link
+        href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600&family=Space+Grotesk:wght@400;600;700&display=swap"
+        rel="stylesheet">
+    <script src="https://unpkg.com/@phosphor-icons/web"></script>
+    <link rel="stylesheet" href="styles.css">
+    <script src="script.js"></script>
+    <script>
+        // Simple Accordion Text
+        document.addEventListener('DOMContentLoaded', () => {
+            const accordions = document.querySelectorAll('.accordion-header');
+            accordions.forEach(acc => {
+                acc.addEventListener('click', () => {
+                    const item = acc.parentElement;
+                    item.classList.toggle('active');
+                });
+            });
+        });
+    </script>
+</head>
+
+<body>
+
+    <header>
+        <div class="container">
+            <a href="index.html" class="logo">
+                <img src="header-logo.png" alt="Launchpad Automation">
+            </a>
+
+            <nav class="nav-center">
+                <a href="index.html" class="active">Home</a>
+                <a href="solutions.html">Solutions</a>
+                <a href="portal.html">The Portal</a>
+                <a href="pricing.html">Pricing</a>
+            </nav>
+
+            <div class="header-right">
+                <a href="contact.html" class="btn-nav-cta">Book Discovery</a>
+                <button class="mobile-menu-toggle">
+                    <i class="ph ph-list"></i>
+                </button>
+            </div>
+        </div>
+
+        <!-- Mobile Menu -->
+        <div class="mobile-menu">
+            <a href="index.html" class="active" style="padding: 0.5rem 0; font-weight: 600;">Home</a>
+            <a href="solutions.html" style="padding: 0.5rem 0; color: #475569;">Solutions</a>
+            <a href="portal.html" style="padding: 0.5rem 0; color: #475569;">The Portal</a>
+            <a href="pricing.html" style="padding: 0.5rem 0; color: #475569;">Pricing</a>
+            <a href="contact.html" class="btn-primary" style="margin-top: 1rem; text-align: center;">Book Discovery</a>
+        </div>
+    </header>
+
+    <main>
+        <!-- Hero Section -->
+        <section class="hero">
+            <div class="container hero-box">
+                <div class="subtitle text-accent">For Marketing Agencies</div>
+                <h1>Custom AI Agents Built For Your Agency</h1>
+                <p class="hero-subtitle">
+                    We build custom AI agents designed for <strong>YOUR</strong> specific problems.
+                    Full turnkey deployment in 30 days or less.
+                </p>
+                <div class="cta-group">
+                    <a href="contact.html" class="btn btn-primary">Schedule Discovery Call</a>
+                    <a href="solutions.html" class="btn btn-outline">View Case Studies</a>
+                </div>
+
+                <div class="hero-stats">
+                    <div>
+                        <h3>30 Days</h3>
+                        <p class="text-muted">To Deployment</p>
+                    </div>
+                    <div>
+                        <h3>100%</h3>
+                        <p class="text-muted">Custom Built</p>
+                    </div>
+                    <div>
+                        <h3>$750+</h3>
+                        <p class="text-muted">Monthly Plans</p>
+                    </div>
+                    <div>
+                        <h3>24/7</h3>
+                        <p class="text-muted">Operations</p>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Integrations (New) -->
+        <section style="background: #0e1015; padding: 2rem 0;">
+            <div class="container">
+                <p class="text-muted center-text"
+                    style="font-size: 0.9rem; text-transform: uppercase; letter-spacing: 2px;">Seamlessly Integrates
+                    With Your Stack</p>
+                <div class="logo-grid">
+                    <div class="logo-item"><i class="ph-bold ph-google-logo"></i> Google Workspace</div>
+                    <div class="logo-item"><i class="ph-bold ph-chat-circle-dots"></i> Slack</div>
+                    <div class="logo-item"><i class="ph-bold ph-users-three"></i> Salesforce</div>
+                    <div class="logo-item"><i class="ph-bold ph-chart-bar"></i> HubSpot</div>
+                    <div class="logo-item"><i class="ph-bold ph-envelope-simple"></i> Outlook</div>
+                    <div class="logo-item"><i class="ph-bold ph-square-logo"></i> Stripe</div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Value Prop / Process -->
+        <section class="process-section">
+            <div class="container">
+                <div class="center-text" style="text-align: center; margin-bottom: 3rem;">
+                    <h2>Discovery First, Solution Second</h2>
+                    <p class="text-muted" style="max-width: 600px; margin: 0 auto; margin-top: 1rem;">Most AI vendors
+                        try to sell you what they've already built. We don't do that. We are engineers who build what
+                        you actually need, not what we want to sell.</p>
+                </div>
+
+                <div class="process-grid">
+                    <div class="process-card">
+                        <div class="step-number">1</div>
+                        <h3>Discovery</h3>
+                        <p class="text-muted mt-1"><strong>Week 1:</strong> We identify YOUR specific pain points and
+                            revenue leaks. We perform a deep-dive audit of your current SOPs.</p>
+                    </div>
+                    <div class="process-card">
+                        <div class="step-number">2</div>
+                        <h3>Analysis</h3>
+                        <p class="text-muted mt-1"><strong>Week 1:</strong> We evaluate exactly what's possible with
+                            current AI models. We design the architecture and gain your approval before writing code.
+                        </p>
+                    </div>
+                    <div class="process-card">
+                        <div class="step-number">3</div>
+                        <h3>Custom Build</h3>
+                        <p class="text-muted mt-1"><strong>Week 2-3:</strong> We build your agent + custom analytics
+                            portal. We connect APIs, fine-tune models, and stress-test the system.</p>
+                    </div>
+                    <div class="process-card">
+                        <div class="step-number">4</div>
+                        <h3>Deploy</h3>
+                        <p class="text-muted mt-1"><strong>Week 4:</strong> We implement, train, and go live. We hold
+                            hand-off sessions with your team to ensure adoption.</p>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Comparison Section -->
+        <section class="comparison-section">
+            <div class="container">
+                <div style="display: flex; flex-direction: column; gap: 3rem; margin-top: 2rem;">
+                    <div>
+                        <h2>Why Work With Us?</h2>
+                        <p class="text-muted" style="margin-bottom: 2rem; margin-top: 1rem;">We run a marketing agency
+                            ourselves. We
+                            understand the pressure of client retention, the pain of manual processes, and the reality
+                            of running a service business. We build what we'd want if we were in your position. Because
+                            we are.</p>
+
+                        <div class="callout-box">
+                            <h4 class="text-accent">The Difference</h4>
+                            <p class="text-muted mt-1">Generic tools give you generic results. Custom tools give you a
+                                competitive moat. Stop paying monthly for SaaS tools that don't talk to each other.</p>
+                        </div>
+                    </div>
+                    <div>
+                        <table class="comparison-table" style="margin-top: 0;">
+                            <thead>
+                                <tr>
+                                    <th>Feature</th>
+                                    <th>Most AI Companies</th>
+                                    <th style="color: var(--accent-primary);">Launchpad Automation</th>
+                                </tr>
+                            </thead>
+                            <tbody>
+                                <tr>
+                                    <td>Product Strategy</td>
+                                    <td>Sell pre-built products</td>
+                                    <td>Build custom agents from scratch</td>
+                                </tr>
+                                <tr>
+                                    <td>Visibility</td>
+                                    <td>Generic dashboards</td>
+                                    <td>Custom portal for specific KPIs</td>
+                                </tr>
+                                <tr>
+                                    <td>Pricing Model</td>
+                                    <td>One-size-fits-all</td>
+                                    <td>Pricing based on complexity</td>
+                                </tr>
+                                <tr>
+                                    <td>Support</td>
+                                    <td>Tickets and waiting</td>
+                                    <td>Direct access to builder</td>
+                                </tr>
+                                <tr>
+                                    <td>Commitment</td>
+                                    <td>Annual Contracts</td>
+                                    <td>Month-to-month (cancel anytime)</td>
+                                </tr>
+                            </tbody>
+                        </table>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Objections / FAQ (New) -->
+        <section style="padding: 4rem 0;">
+            <div class="container">
+                <h2 style="text-align: center; margin-bottom: 3rem;">Common Questions</h2>
+                <div class="accordion">
+                    <div class="accordion-item">
+                        <div class="accordion-header">
+                            Is this just a wrapper for ChatGPT?
+                            <i class="ph ph-caret-down"></i>
+                        </div>
+                        <div class="accordion-content">
+                            <p>No. While we utilize LLMs for reasoning, our systems are complex software architectures
+                                that integrate directly with your database, CRM, and internal tools. They have memory,
+                                state, and specific permissions designed for your workflow.</p>
+                        </div>
+                    </div>
+                    <div class="accordion-item">
+                        <div class="accordion-header">
+                            How secure is my data?
+                            <i class="ph ph-caret-down"></i>
+                        </div>
+                        <div class="accordion-content">
+                            <p>Extremely. We build single-tenant architectures. Your data does not commingle with other
+                                clients. We use industry-standard encryption and never use your data to train public
+                                models.</p>
+                        </div>
+                    </div>
+                    <div class="accordion-item">
+                        <div class="accordion-header">
+                            What happens if the AI makes a mistake?
+                            <i class="ph ph-caret-down"></i>
+                        </div>
+                        <div class="accordion-content">
+                            <p>Our systems include "Human-in-the-Loop" (HITL) modes. For sensitive tasks, the agent
+                                drafts the work and waits for approval in your custom portal. As trust builds, you can
+                                increase autonomy.</p>
+                        </div>
+                    </div>
+                    <div class="accordion-item">
+                        <div class="accordion-header">
+                            Do I own the code?
+                            <i class="ph ph-caret-down"></i>
+                        </div>
+                        <div class="accordion-content">
+                            <p>For Enterprise plans, yes. For our standard monthly plans, we grant you a perpetual usage
+                                license for the duration of the subscription, managing all hosting and maintenance for
+                                you.</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Bottom CTA -->
+        <section class="cta-section">
+            <div class="container">
+                <div class="cta-stats-bar">
+                    <div class="cta-stat-card">
+                        <i class="ph ph-rocket-launch" style="margin-right: 0.5rem; font-size: 1.2em;"></i>
+                        30 Days to Deploy
+                    </div>
+                    <div class="cta-stat-card">
+                        <i class="ph ph-check-circle" style="margin-right: 0.5rem; font-size: 1.2em;"></i>
+                        Live in Production
+                    </div>
+                    <div class="cta-stat-card">
+                        <i class="ph ph-currency-dollar" style="margin-right: 0.5rem; font-size: 1.2em;"></i>
+                        $750+/mo Starting Price
+                    </div>
+                </div>
+
+                <h2>Ready to Build Your Custom AI Agent?</h2>
+                <p>Schedule a 45-minute discovery call. We'll identify your highest-ROI problem and show you exactly
+                    what
+                    we'd build.</p>
+
+                <a href="contact.html" class="btn-cta">Schedule Discovery Call</a>
+            </div>
+        </section>
+
+    </main>
+
+    <footer>
+        <div class="container">
+            <div class="footer-grid">
+                <div class="footer-col">
+                    <h4>Launchpad Automation</h4>
+                    <p>We run a marketing agency ourselves. We understand the pressure of client
+                        retention and manual processes. We build what we'd want.</p>
+                </div>
+                <div class="footer-col">
+                    <h4>Sitemap</h4>
+                    <a href="index.html">Home</a>
+                    <a href="solutions.html">Solutions</a>
+                    <a href="portal.html">The Portal</a>
+                    <a href="pricing.html">Pricing</a>
+                </div>
+                <div class="footer-col">
+                    <h4>Legal</h4>
+                    <a href="#">Privacy Policy</a>
+                    <a href="#">Terms of Service</a>
+                </div>
+                <div class="footer-col">
+                    <h4>Contact</h4>
+                    <a href="contact.html">Schedule Call</a>
+                    <p style="color: #94A3B8; margin-top: 12px;">Palm Beach, USA</p>
+                </div>
+            </div>
+            <div class="footer-bottom">
+                &copy; 2025 Launchpad Automation. All rights reserved.
+            </div>
+        </div>
+    </footer>
+
+</body>
+
+</html>

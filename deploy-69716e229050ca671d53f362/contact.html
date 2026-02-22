@@ -1,0 +1,224 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Contact | Launchpad Automation</title>
+    <link
+        href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600&family=Space+Grotesk:wght@400;600;700&display=swap"
+        rel="stylesheet">
+    <script src="https://unpkg.com/@phosphor-icons/web"></script>
+    <link rel="stylesheet" href="styles.css">
+    <script src="script.js"></script>
+    <style>
+        .contact-card {
+            background: #FFFFFF;
+            border: 1px solid var(--border-light);
+            border-radius: var(--radius-main);
+            padding: 1.5rem;
+            margin-bottom: 1rem;
+            display: flex;
+            align-items: center;
+            gap: 1rem;
+            transition: transform 0.2s ease;
+        }
+
+        .contact-card:hover {
+            transform: translateY(-2px);
+            border-color: var(--accent-primary);
+        }
+
+        .gray-box {
+            background: #F8FAFC;
+            padding: 2rem;
+            border-radius: var(--radius-main);
+            border: 1px solid var(--border-light);
+        }
+
+        .form-container {
+            background: #FFFFFF;
+            padding: 2.5rem;
+            border-radius: var(--radius-main);
+            border: 1px solid var(--border-light);
+            box-shadow: var(--shadow-sm);
+        }
+
+        .split-layout {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 4rem;
+        }
+
+        @media (max-width: 768px) {
+            .split-layout {
+                grid-template-columns: 1fr;
+                gap: 3rem;
+            }
+
+            .form-container {
+                padding: 1.5rem;
+            }
+        }
+    </style>
+</head>
+
+<body>
+    <header>
+        <div class="container">
+            <a href="index.html" class="logo">
+                <img src="header-logo.png" alt="Launchpad Automation">
+            </a>
+
+            <nav class="nav-center">
+                <a href="index.html">Home</a>
+                <a href="solutions.html">Solutions</a>
+                <a href="portal.html">The Portal</a>
+                <a href="pricing.html">Pricing</a>
+            </nav>
+
+            <div class="header-right">
+                <a href="contact.html" class="btn-nav-cta">Book Discovery</a>
+                <button class="mobile-menu-toggle">
+                    <i class="ph ph-list"></i>
+                </button>
+            </div>
+        </div>
+
+        <!-- Mobile Menu -->
+        <div class="mobile-menu">
+            <a href="index.html" style="padding: 0.5rem 0; color: #475569;">Home</a>
+            <a href="solutions.html" style="padding: 0.5rem 0; color: #475569;">Solutions</a>
+            <a href="portal.html" style="padding: 0.5rem 0; color: #475569;">The Portal</a>
+            <a href="pricing.html" style="padding: 0.5rem 0; color: #475569;">Pricing</a>
+            <a href="contact.html" class="btn-primary" style="margin-top: 1rem; text-align: center;">Book Discovery</a>
+        </div>
+    </header>
+
+    <main>
+        <!-- Hero -->
+        <section class="hero" style="padding-bottom: 2rem;">
+            <div class="container hero-box">
+                <h1>Let's Build Your Custom AI Agent</h1>
+                <p class="hero-subtitle">Ready to automate? Schedule a 45-minute discovery call to discuss your agency's
+                    specific bottlenecks.</p>
+            </div>
+        </section>
+
+        <!-- Split Content -->
+        <section style="padding: 2rem 0 5rem;">
+            <div class="container split-layout">
+
+                <!-- Left Column: Info -->
+                <div>
+                    <h2 style="font-size: 2rem; margin-bottom: 2rem; color: #0A1628;">Get In Touch</h2>
+
+                    <div class="contact-card">
+                        <i class="ph-fill ph-envelope-simple text-accent" style="font-size: 1.5rem;"></i>
+                        <div>
+                            <div class="text-muted" style="font-size: 0.9rem;">Email</div>
+                            <div style="font-weight: 500;">hello@launchpadautomation.com</div>
+                        </div>
+                    </div>
+
+                    <div class="contact-card">
+                        <i class="ph-fill ph-map-pin text-accent" style="font-size: 1.5rem;"></i>
+                        <div>
+                            <div class="text-muted" style="font-size: 0.9rem;">Location</div>
+                            <div style="font-weight: 500;">Palm Beach, USA</div>
+                        </div>
+                    </div>
+
+                    <div class="contact-card">
+                        <i class="ph-fill ph-clock text-accent" style="font-size: 1.5rem;"></i>
+                        <div>
+                            <div class="text-muted" style="font-size: 0.9rem;">Response Time</div>
+                            <div style="font-weight: 500;">Within 24 hours</div>
+                        </div>
+                    </div>
+
+                    <div class="gray-box" style="margin-top: 3rem;">
+                        <h3 style="font-size: 1.25rem; margin-bottom: 1.5rem; color: #0A1628;">What Happens Next</h3>
+                        <ol
+                            style="padding-left: 1.2rem; color: var(--text-secondary); line-height: 2; font-weight: 500;">
+                            <li>Email us or schedule a call</li>
+                            <li>45-min discovery session</li>
+                            <li>Custom proposal within 5 days</li>
+                            <li>Start building in Week 1</li>
+                        </ol>
+                    </div>
+                </div>
+
+                <!-- Right Column: Form -->
+                <div>
+                    <div class="form-container">
+                        <form action="https://formspree.io/f/xeeergwn" method="POST">
+                            <div style="margin-bottom: 1.5rem;">
+                                <label
+                                    style="display: block; margin-bottom: 0.5rem; color: #0A1628; font-weight: 600;">Name</label>
+                                <input type="text" name="name" class="form-input"
+                                    style="width: 100%; padding: 1rem; border: 1px solid var(--border-strong); border-radius: 6px; font-family: 'Inter', sans-serif;"
+                                    placeholder="Your Name" required>
+                            </div>
+
+                            <div style="margin-bottom: 1.5rem;">
+                                <label
+                                    style="display: block; margin-bottom: 0.5rem; color: #0A1628; font-weight: 600;">Email</label>
+                                <input type="email" name="email" class="form-input"
+                                    style="width: 100%; padding: 1rem; border: 1px solid var(--border-strong); border-radius: 6px; font-family: 'Inter', sans-serif;"
+                                    placeholder="you@agency.com" required>
+                            </div>
+
+                            <div style="margin-bottom: 1.5rem;">
+                                <label
+                                    style="display: block; margin-bottom: 0.5rem; color: #0A1628; font-weight: 600;">Agency
+                                    Name</label>
+                                <input type="text" name="agency" class="form-input"
+                                    style="width: 100%; padding: 1rem; border: 1px solid var(--border-strong); border-radius: 6px; font-family: 'Inter', sans-serif;"
+                                    placeholder="Agency Name" required>
+                            </div>
+
+                            <div style="margin-bottom: 2rem;">
+                                <label
+                                    style="display: block; margin-bottom: 0.5rem; color: #0A1628; font-weight: 600;">Message</label>
+                                <textarea name="message" class="form-textarea"
+                                    style="width: 100%; padding: 1rem; border: 1px solid var(--border-strong); border-radius: 6px; min-height: 120px; font-family: 'Inter', sans-serif;"
+                                    placeholder="How can we help?" required></textarea>
+                            </div>
+
+                            <button type="submit" class="btn btn-primary"
+                                style="width: 100%; padding: 1rem; font-size: 1.1rem; border-radius: 6px;">Send
+                                Message</button>
+                        </form>
+                    </div>
+                </div>
+
+            </div>
+        </section>
+
+    </main>
+
+    <footer>
+        <div class="container">
+            <div class="footer-grid">
+                <div class="footer-col">
+                    <h4>Launchpad Automation</h4>
+                    <p>We run a marketing agency ourselves. We understand the pressure of client
+                        retention and manual processes. We build what we'd want.</p>
+                </div>
+                <div class="footer-col">
+                    <h4>Sitemap</h4>
+                    <a href="index.html">Home</a>
+                    <a href="solutions.html">Solutions</a>
+                    <a href="portal.html">The Portal</a>
+                    <a href="pricing.html">Pricing</a>
+                </div>
+                <div class="footer-col">
+                    <h4>Legal</h4>
+                    <a href="#">Privacy Policy</a>
+                    <a href="#">Terms of Service</a>
+                </div>
+                <div class="footer-col">
+                    <h4>Contact</h4>
+                    <a href="contact.html">Schedule Call</a>
+                    <p style="color: #

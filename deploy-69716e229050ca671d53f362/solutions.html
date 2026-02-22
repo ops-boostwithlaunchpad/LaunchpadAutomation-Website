@@ -1,0 +1,323 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Solutions | Launchpad Automation</title>
+    <link
+        href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600&family=Space+Grotesk:wght@400;600;700&display=swap"
+        rel="stylesheet">
+    <script src="https://unpkg.com/@phosphor-icons/web"></script>
+    <link rel="stylesheet" href="styles.css">
+    <script src="script.js"></script>
+    <style>
+        .feature-box {
+            background: #FFFFFF;
+            border: 1px solid var(--border-light);
+            border-radius: var(--radius-main);
+            padding: 3rem;
+            height: 100%;
+            box-shadow: var(--shadow-sm);
+        }
+
+        .feature-box ul li {
+            margin-bottom: 1rem;
+            display: flex;
+            align-items: start;
+            gap: 0.8rem;
+            color: var(--text-secondary);
+        }
+
+        .feature-box ul li i {
+            color: var(--accent-primary);
+            font-size: 1.2rem;
+            margin-top: 2px;
+        }
+
+        .gray-card {
+            background: #F8FAFC !important;
+            /* Specific light gray request */
+            border: 1px solid var(--border-light);
+            padding: 2rem;
+            border-radius: var(--radius-main);
+            height: 100%;
+        }
+
+        .use-case-label {
+            font-size: 0.85rem;
+            font-weight: 600;
+            text-transform: uppercase;
+            letter-spacing: 0.05em;
+            color: var(--accent-secondary);
+            margin-bottom: 0.25rem;
+            display: block;
+        }
+    </style>
+</head>
+
+<body>
+    <header>
+        <div class="container">
+            <a href="index.html" class="logo">
+                <img src="header-logo.png" alt="Launchpad Automation">
+            </a>
+
+            <nav class="nav-center">
+                <a href="index.html">Home</a>
+                <a href="solutions.html" class="active">Solutions</a>
+                <a href="portal.html">The Portal</a>
+                <a href="pricing.html">Pricing</a>
+            </nav>
+
+            <div class="header-right">
+                <a href="contact.html" class="btn-nav-cta">Book Discovery</a>
+                <button class="mobile-menu-toggle">
+                    <i class="ph ph-list"></i>
+                </button>
+            </div>
+        </div>
+
+        <!-- Mobile Menu -->
+        <div class="mobile-menu">
+            <a href="index.html" style="padding: 0.5rem 0; color: #475569;">Home</a>
+            <a href="solutions.html" class="active" style="padding: 0.5rem 0; font-weight: 600;">Solutions</a>
+            <a href="portal.html" style="padding: 0.5rem 0; color: #475569;">The Portal</a>
+            <a href="pricing.html" style="padding: 0.5rem 0; color: #475569;">Pricing</a>
+            <a href="contact.html" class="btn-primary" style="margin-top: 1rem; text-align: center;">Book Discovery</a>
+        </div>
+    </header>
+
+    <main>
+        <!-- Hero -->
+        <section class="hero" style="padding-bottom: 3rem;">
+            <div class="container hero-box">
+                <div class="subtitle text-accent">The Complete Package</div>
+                <h1>What's Included</h1>
+                <p class="hero-subtitle">
+                    We don't just write code. We deliver a complete, managed business outcome.
+                    Here is everything you get with your subscription.
+                </p>
+            </div>
+        </section>
+
+        <!-- Two Main Feature Boxes -->
+        <section style="padding: 2rem 0;">
+            <div class="container">
+                <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(400px, 1fr)); gap: 3rem;">
+                    <!-- Left Box -->
+                    <div class="feature-box">
+                        <div
+                            style="width: 50px; height: 50px; background: rgba(59, 130, 246, 0.1); border-radius: 8px; display: flex; align-items: center; justify-content: center; margin-bottom: 1.5rem;">
+                            <i class="ph-fill ph-robot" style="font-size: 1.8rem; color: var(--accent-primary);"></i>
+                        </div>
+                        <h2 style="font-size: 2rem; margin-bottom: 1.5rem;">Custom AI Agent</h2>
+                        <ul>
+                            <li><i class="ph-bold ph-check"></i> Built completely from scratch for your agency</li>
+                            <li><i class="ph-bold ph-check"></i> Integrated directly with your tech stack</li>
+                            <li><i class="ph-bold ph-check"></i> Trained on your specific historical data</li>
+                            <li><i class="ph-bold ph-check"></i> Handles end-to-end complex workflows</li>
+                            <li><i class="ph-bold ph-check"></i> Improves accuracy over time with feedback</li>
+                            <li><i class="ph-bold ph-check"></i> Runs 24/7 without holidays or breaks</li>
+                        </ul>
+                    </div>
+
+                    <!-- Right Box -->
+                    <div class="feature-box">
+                        <div
+                            style="width: 50px; height: 50px; background: rgba(14, 165, 233, 0.1); border-radius: 8px; display: flex; align-items: center; justify-content: center; margin-bottom: 1.5rem;">
+                            <i class="ph-fill ph-chart-pie-slice"
+                                style="font-size: 1.8rem; color: var(--accent-secondary);"></i>
+                        </div>
+                        <h2 style="font-size: 2rem; margin-bottom: 1.5rem;">Dedicated Analytics Portal</h2>
+                        <ul>
+                            <li><i class="ph-bold ph-check"></i> Real-time performance dashboard</li>
+                            <li><i class="ph-bold ph-check"></i> Custom KPIs tracked (e.g., hours saved)</li>
+                            <li><i class="ph-bold ph-check"></i> Dollar-value ROI tracking</li>
+                            <li><i class="ph-bold ph-check"></i> Granular activity logs for transparency</li>
+                            <li><i class="ph-bold ph-check"></i> Human-in-the-Loop approval interfaces</li>
+                            <li><i class="ph-bold ph-check"></i> One-click data export & reporting</li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Also Included -->
+        <section style="background: #FFFFFF;">
+            <div class="container">
+                <h3 style="text-align: center; margin-bottom: 3rem; font-size: 2rem;">Also Included In Every Plan</h3>
+                <div class="process-grid" style="margin-top: 0;">
+
+                    <div class="gray-card">
+                        <h4 style="margin-bottom: 1rem;">Documentation</h4>
+                        <ul class="pricing-features">
+                            <li>Video walkthroughs</li>
+                            <li>Architecture diagrams</li>
+                            <li>Standard Operating Procedures</li>
+                            <li>API documentation</li>
+                            <li>User guides</li>
+                        </ul>
+                    </div>
+
+                    <div class="gray-card">
+                        <h4 style="margin-bottom: 1rem;">Team Training</h4>
+                        <ul class="pricing-features">
+                            <li>Live onboarding workshops</li>
+                            <li>Role-specific training</li>
+                            <li>Best practices guides</li>
+                            <li>Live Q&A sessions</li>
+                            <li>Adoption monitoring</li>
+                        </ul>
+                    </div>
+
+                    <div class="gray-card">
+                        <h4 style="margin-bottom: 1rem;">Ongoing Support</h4>
+                        <ul class="pricing-features">
+                            <li>Bug fixes & maintenance</li>
+                            <li>Prompt optimizations</li>
+                            <li>API updates handling</li>
+                            <li>Slack channel access</li>
+                            <li>Monthly reviews</li>
+                        </ul>
+                    </div>
+
+                    <div class="gray-card">
+                        <h4 style="margin-bottom: 1rem;">Full Integration</h4>
+                        <ul class="pricing-features">
+                            <li>CRM (HubSpot/Salesforce)</li>
+                            <li>Chat (Slack/Teams)</li>
+                            <li>Email infrastructure</li>
+                            <li>Internal databases</li>
+                            <li>Custom Webhooks</li>
+                        </ul>
+                    </div>
+
+                </div>
+            </div>
+        </section>
+
+        <!-- Common Use Cases -->
+        <section style="padding-top: 2rem;">
+            <div class="container">
+                <h2 style="text-align: center; margin-bottom: 4rem;">Common Use Cases</h2>
+                <div class="process-grid">
+
+                    <!-- Use Case 1 -->
+                    <div class="process-card">
+                        <h3 style="font-size: 1.4rem;">Lead Qualification</h3>
+                        <div class="mt-2">
+                            <span class="use-case-label">Problem</span>
+                            <p class="text-muted" style="margin-bottom: 1rem;">Sales team wasting 20h/week on bad leads.
+                            </p>
+
+                            <span class="use-case-label">Solution</span>
+                            <p class="text-muted" style="margin-bottom: 1rem;">Agent scores & enriches every inbound
+                                lead instantly.</p>
+
+                            <span class="use-case-label" style="color: var(--accent-primary);">Result</span>
+                            <p style="font-weight: 600;">34% increase in conversion rate.</p>
+                        </div>
+                    </div>
+
+                    <!-- Use Case 2 -->
+                    <div class="process-card">
+                        <h3 style="font-size: 1.4rem;">Automated Reporting</h3>
+                        <div class="mt-2">
+                            <span class="use-case-label">Problem</span>
+                            <p class="text-muted" style="margin-bottom: 1rem;">AMs spending Mondays copy-pasting CSV
+                                data.</p>
+
+                            <span class="use-case-label">Solution</span>
+                            <p class="text-muted" style="margin-bottom: 1rem;">Agent pulls data sources & writes
+                                summaries.</p>
+
+                            <span class="use-case-label" style="color: var(--accent-primary);">Result</span>
+                            <p style="font-weight: 600;">15 hours saved per AM/week.</p>
+                        </div>
+                    </div>
+
+                    <!-- Use Case 3 -->
+                    <div class="process-card">
+                        <h3 style="font-size: 1.4rem;">Churn Prediction</h3>
+                        <div class="mt-2">
+                            <span class="use-case-label">Problem</span>
+                            <p class="text-muted" style="margin-bottom: 1rem;">Clients leaving without prior warning
+                                signals.</p>
+
+                            <span class="use-case-label">Solution</span>
+                            <p class="text-muted" style="margin-bottom: 1rem;">Sentiment analysis on all email & slack
+                                comms.</p>
+
+                            <span class="use-case-label" style="color: var(--accent-primary);">Result</span>
+                            <p style="font-weight: 600;">20% reduction in annual churn.</p>
+                        </div>
+                    </div>
+
+                    <!-- Use Case 4 -->
+                    <div class="process-card">
+                        <h3 style="font-size: 1.4rem;">Upsell Detection</h3>
+                        <div class="mt-2">
+                            <span class="use-case-label">Problem</span>
+                            <p class="text-muted" style="margin-bottom: 1rem;">Missed opportunities to expand existing
+                                accounts.</p>
+
+                            <span class="use-case-label">Solution</span>
+                            <p class="text-muted" style="margin-bottom: 1rem;">Identifies intent signals in conversation
+                                history.</p>
+
+                            <span class="use-case-label" style="color: var(--accent-primary);">Result</span>
+                            <p style="font-weight: 600;">$45k new pipeline generated.</p>
+                        </div>
+                    </div>
+
+                </div>
+            </div>
+        </section>
+
+        <!-- CTA -->
+        <section style="padding: 6rem 0; text-align: center;">
+            <div class="container">
+                <h2>Ready to Build?</h2>
+                <p class="text-muted mt-1" style="max-width: 600px; margin: 0 auto 2rem auto;">Book a discovery call to
+                    see if your agency is a good fit for our automation systems.</p>
+                <a href="contact.html" class="btn btn-primary">Schedule Discovery Call</a>
+            </div>
+        </section>
+
+    </main>
+
+    <footer>
+        <div class="container">
+            <div class="footer-grid">
+                <div class="footer-col">
+                    <h4>Launchpad Automation</h4>
+                    <p>We run a marketing agency ourselves. We understand the pressure of client
+                        retention and manual processes. We build what we'd want.</p>
+                </div>
+                <div class="footer-col">
+                    <h4>Sitemap</h4>
+                    <a href="index.html">Home</a>
+                    <a href="solutions.html">Solutions</a>
+                    <a href="portal.html">The Portal</a>
+                    <a href="pricing.html">Pricing</a>
+                </div>
+                <div class="footer-col">
+                    <h4>Legal</h4>
+                    <a href="#">Privacy Policy</a>
+                    <a href="#">Terms of Service</a>
+                </div>
+                <div class="footer-col">
+                    <h4>Contact</h4>
+                    <a href="contact.html">Schedule Call</a>
+                    <p style="color: #94A3B8; margin-top: 12px;">Palm Beach, USA</p>
+                </div>
+            </div>
+            <div class="footer-bottom">
+                &copy; 2025 Launchpad Automation. All rights reserved.
+            </div>
+        </div>
+    </footer>
+</body>
+
+</html>

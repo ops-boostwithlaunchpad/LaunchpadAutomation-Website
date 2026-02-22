@@ -1,0 +1,218 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Pricing | Launchpad Automation</title>
+    <link
+        href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600&family=Space+Grotesk:wght@400;600;700&display=swap"
+        rel="stylesheet">
+    <script src="https://unpkg.com/@phosphor-icons/web"></script>
+    <link rel="stylesheet" href="styles.css">
+    <script src="script.js"></script>
+    <script>
+        // Simple ROI Calculator Logic
+        function calculateROI() {
+            const hours = document.getElementById('hoursInput').value;
+            const rate = document.getElementById('rateInput').value;
+            const monthlyCost = hours * rate * 4; // weeks
+            const automationCost = 2000; // Middle tier avg
+            const savings = monthlyCost - automationCost;
+
+            document.getElementById('savingsDisplay').innerText = '$' + savings.toLocaleString();
+        }
+    </script>
+</head>
+
+<body>
+    <header>
+        <div class="container">
+            <a href="index.html" class="logo">
+                <img src="header-logo.png" alt="Launchpad Automation">
+            </a>
+
+            <nav class="nav-center">
+                <a href="index.html">Home</a>
+                <a href="solutions.html">Solutions</a>
+                <a href="portal.html">The Portal</a>
+                <a href="pricing.html" class="active">Pricing</a>
+            </nav>
+
+            <div class="header-right">
+                <a href="contact.html" class="btn-nav-cta">Book Discovery</a>
+                <button class="mobile-menu-toggle">
+                    <i class="ph ph-list"></i>
+                </button>
+            </div>
+        </div>
+
+        <!-- Mobile Menu -->
+        <div class="mobile-menu">
+            <a href="index.html" style="padding: 0.5rem 0; color: #475569;">Home</a>
+            <a href="solutions.html" style="padding: 0.5rem 0; color: #475569;">Solutions</a>
+            <a href="portal.html" style="padding: 0.5rem 0; color: #475569;">The Portal</a>
+            <a href="pricing.html" class="active" style="padding: 0.5rem 0; font-weight: 600;">Pricing</a>
+            <a href="contact.html" class="btn-primary" style="margin-top: 1rem; text-align: center;">Book Discovery</a>
+        </div>
+    </header>
+
+    <main>
+        <section class="hero" style="padding-bottom: 2rem;">
+            <div class="container hero-box">
+                <h1>Investment & Pricing</h1>
+                <p class="hero-subtitle">We charge monthly for each custom AI agent + portal. Our pricing is transparent
+                    and creates immediate ROI.</p>
+            </div>
+        </section>
+
+        <!-- ROI Calculator (New) -->
+        <div class="container">
+            <div class="roi-calc">
+                <h2>Calculate Your ROI</h2>
+                <p class="text-muted" style="margin-bottom: 2rem;">See how much you could save by automating a single
+                    workflow.</p>
+                <div
+                    style="display: flex; gap: 2rem; justify-content: center; align-items: center; margin-bottom: 2rem;">
+                    <div>
+                        <label style="display: block; margin-bottom: 0.5rem;">Hours spent per week</label>
+                        <input type="number" id="hoursInput" class="form-input"
+                            style="width: 150px; text-align: center;" value="20" oninput="calculateROI()">
+                    </div>
+                    <div>
+                        <label style="display: block; margin-bottom: 0.5rem;">Hourly Labor Cost ($)</label>
+                        <input type="number" id="rateInput" class="form-input" style="width: 150px; text-align: center;"
+                            value="45" oninput="calculateROI()">
+                    </div>
+                </div>
+                <div>
+                    <div class="text-muted">Estimated Monthly Savings</div>
+                    <div class="roi-number" id="savingsDisplay">$1,600</div>
+                    <p class="text-muted" style="font-size: 0.9rem;">(Based on $2k/mo automation cost)</p>
+                </div>
+            </div>
+        </div>
+
+        <!-- Pricing Grid -->
+        <section style="padding: 2rem 0;">
+            <div class="container">
+                <div class="pricing-grid">
+                    <!-- Tier 1 -->
+                    <div class="pricing-card">
+                        <h3>Single Workflow</h3>
+                        <p class="text-muted">Best for: Automated Reporting, basic data entry, simple notifications.</p>
+                        <div class="price-tag">$750<span class="price-sub">/mo</span></div>
+                        <ul class="pricing-features">
+                            <li>Set-up: $3,500 - $5,000</li>
+                            <li>Time to Build: 4 Weeks</li>
+                            <li><i class="ph-bold ph-check"></i> Custom Agent Logic</li>
+                            <li><i class="ph-bold ph-check"></i> Basic Status Portal</li>
+                            <li><i class="ph-bold ph-check"></i> Weekly Maintenance</li>
+                            <li><i class="ph-bold ph-check"></i> 5-day Support SLA</li>
+                        </ul>
+                        <a href="contact.html" class="btn btn-outline">Select Plan</a>
+                    </div>
+
+                    <!-- Tier 2 -->
+                    <div class="pricing-card" style="border-color: var(--accent-secondary);">
+                        <div
+                            style="background: var(--accent-secondary); color: white; font-weight: bold; padding: 4px 12px; border-radius: 20px; font-size: 0.8rem; display: inline-block; margin-bottom: 1rem;">
+                            MOST POPULAR</div>
+                        <h3>Integrated System</h3>
+                        <p class="text-muted">Best for: Lead Scoring, CRM Management, Multi-step processes.</p>
+                        <div class="price-tag">$1,500<span class="price-sub">/mo</span></div>
+                        <ul class="pricing-features">
+                            <li>Set-up: $6,000 - $10,000</li>
+                            <li>Time to Build: 4 Weeks</li>
+                            <li><i class="ph-bold ph-check"></i> Multi-Tool Integration</li>
+                            <li><i class="ph-bold ph-check"></i> Advanced Analytics Portal</li>
+                            <li><i class="ph-bold ph-check"></i> Human-in-Loop Mode</li>
+                            <li><i class="ph-bold ph-check"></i> 24hr Support SLA</li>
+                        </ul>
+                        <a href="contact.html" class="btn btn-primary">Select Plan</a>
+                    </div>
+
+                    <!-- Tier 3 -->
+                    <div class="pricing-card enterprise" style="background: #FFFFFF; border: 1px solid var(--border-light);">
+                        <h3>Enterprise</h3>
+                        <p class="text-muted">Best for: Organizations needing on-prem or huge scale.</p>
+                        <div class="price-tag">$4,000<span class="price-sub">/mo</span></div>
+                        <ul class="pricing-features">
+                            <li>Set-up: $18,000+</li>
+                            <li>Time to Build: 4-8 Weeks</li>
+                            <li><i class="ph-bold ph-check"></i> Dedicated Solutions Eng.</li>
+                            <li><i class="ph-bold ph-check"></i> On-Premise Deployment</li>
+                            <li><i class="ph-bold ph-check"></i> Custom SLA & Security</li>
+                            <li><i class="ph-bold ph-check"></i> Unlimited Usage</li>
+                        </ul>
+                        <a href="contact.html" class="btn btn-outline">Contact Sales</a>
+                    </div>
+                </div>
+
+                <div
+                    style="margin-top: 4rem; text-align: center; background: var(--bg-surface); padding: 3rem; border-radius: 8px;">
+                    <h3>What Do You Get For The Monthly Fee?</h3>
+                    <p class="text-muted" style="max-width: 600px; margin: 1rem auto;">We don't just build it and leave.
+                        We run it for you.</p>
+                    <div
+                        style="display: grid; grid-template-columns: repeat(auto-fit, minmax(200px, 1fr)); gap: 2rem; margin-top: 2rem; text-align: left;">
+                        <div>
+                            <h4 class="text-accent">Hosting & Compute</h4>
+                            <p class="text-muted" style="font-size: 0.9rem;">We cover all LLM API costs, server hosting,
+                                and vector database management.</p>
+                        </div>
+                        <div>
+                            <h4 class="text-accent">Optimization</h4>
+                            <p class="text-muted" style="font-size: 0.9rem;">We constantly tweak prompts and parameters
+                                to improve agent accuracy.</p>
+                        </div>
+                        <div>
+                            <h4 class="text-accent">Bug Fixes</h4>
+                            <p class="text-muted" style="font-size: 0.9rem;">APIs break. Websites change. If your agent
+                                stops working, we fix it immediately.</p>
+                        </div>
+                        <div>
+                            <h4 class="text-accent">Strategy</h4>
+                            <p class="text-muted" style="font-size: 0.9rem;">Monthly calls to discuss new capabilities
+                                and how to expand your automation.</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+    </main>
+
+    <footer>
+        <div class="container">
+            <div class="footer-grid">
+                <div class="footer-col">
+                    <h4>Launchpad Automation</h4>
+                    <p>We run a marketing agency ourselves. We understand the pressure of client
+                        retention and manual processes. We build what we'd want.</p>
+                </div>
+                <div class="footer-col">
+                    <h4>Sitemap</h4>
+                    <a href="index.html">Home</a>
+                    <a href="solutions.html">Solutions</a>
+                    <a href="portal.html">The Portal</a>
+                    <a href="pricing.html">Pricing</a>
+                </div>
+                <div class="footer-col">
+                    <h4>Legal</h4>
+                    <a href="#">Privacy Policy</a>
+                    <a href="#">Terms of Service</a>
+                </div>
+                <div class="footer-col">
+                    <h4>Contact</h4>
+                    <a href="contact.html">Schedule Call</a>
+                    <p style="color: #94A3B8; margin-top: 12px;">Palm Beach, USA</p>
+                </div>
+            </div>
+            <div class="footer-bottom">
+                &copy; 2025 Launchpad Automation. All rights reserved.
+            </div>
+        </div>
+    </footer>
+</body>
+
+</html>
