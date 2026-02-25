@@ -190,6 +190,123 @@
         </form>
     </div>
 
+    <script>
+        let currentStep = 1;
+        const totalSteps = 6;
+
+        function updateProgress() {
+            const progress = (currentStep / totalSteps) * 100;
+            document.getElementById('progressBar').style.width = progress + '%';
+            document.getElementById('stepLabel').textContent = `Step ${currentStep} of ${totalSteps}`;
+            
+            // Update step titles (optional implementation)
+            const titles = ["Business Setup", "Contact Details", "Location", "Business Hours", "Target Keywords", "Authorization"];
+            document.querySelector('.step-indicator span:last-child').textContent = titles[currentStep - 1];
+        }
+
+        function showStep(step) {
+            document.querySelectorAll('.form-step').forEach(el => el.style.display = 'none');
+            document.querySelector(`.form-step[data-step="${step}"]`).style.display = 'block';
+            
+            const prevBtn = document.getElementById('prevBtn');
+            const nextBtn = document.getElementById('nextBtn');
+            const submitBtn = document.getElementById('submitBtn');
+
+            if (step === 1) {
+                prevBtn.style.display = 'none';
+            } else {
+                prevBtn.style.display = 'block';
+            }
+
+            if (step === totalSteps) {
+                nextBtn.style.display = 'none';
+                submitBtn.style.display = 'block';
+            } else {
+                nextBtn.style.display = 'block';
+                submitBtn.style.display = 'none';
+            }
+
+            // Keyword simulation logic for step 5
+            if (step === 5) {
+                simulateKeywords();
+            }
+
+            updateProgress();
+            window.scrollTo(0, 0);
+        }
+
+        function nextStep() {
+            if (currentStep < totalSteps) {
+                currentStep++;
+                showStep(currentStep);
+            }
+        }
+
+        function changeStep(n) {
+            currentStep += n;
+            if (currentStep < 1) currentStep = 1;
+            if (currentStep > totalSteps) currentStep = totalSteps;
+            showStep(currentStep);
+        }
+
+        function simulateKeywords() {
+            const loader = document.getElementById('keywordLoader');
+            const results = document.getElementById('keywordResults');
+            const tagsContainer = document.getElementById('keywordTags');
+            
+            loader.style.display = 'block';
+            results.style.display = 'none';
+
+            setTimeout(() => {
+                const category = document.querySelector('input[name="category"]').value || "Business";
+                const city = document.querySelector('input[name="city"]').value || "Local";
+                const keywords = [
+                    `${category} near me`,
+                    `best ${category} in ${city}`,
+                    `${category} services ${city}`,
+                    `top rated ${category}`,
+                    `${city} ${category} experts`
+                ];
+
+                tagsContainer.innerHTML = keywords.map(kw => `
+                    <div style="background: rgba(124, 58, 237, 0.05); border: 1px solid rgba(124, 58, 237, 0.2); padding: 0.5rem; border-radius: 6px; font-size: 0.85rem; display: flex; align-items: center; gap: 0.5rem;">
+                        <i class="ph-fill ph-check-circle text-accent"></i>
+                        <span>${kw}</span>
+                    </div>
+                `).join('');
+
+                loader.style.display = 'none';
+                results.style.display = 'block';
+            }, 1500);
+        }
+
+        document.getElementById('onboardingForm').addEventListener('submit', function(e) {
+            e.preventDefault();
+            
+            const formData = new FormData(this);
+            const data = Object.fromEntries(formData.entries());
+            data.timestamp = new Date().toISOString();
+            data.id = 'sub_' + Date.now();
+            data.meetEnabled = false; // Initially false, will be set true if they book a call
+
+            // Save to localStorage
+            const submissions = JSON.parse(localStorage.getItem('launchpad_submissions') || '[]');
+            submissions.push(data);
+            localStorage.setItem('launchpad_submissions', JSON.stringify(submissions));
+            localStorage.setItem('last_submission_id', data.id);
+
+            // Hide form and show success
+            document.getElementById('onboardingForm').style.display = 'none';
+            document.querySelector('.progress-container').style.display = 'none';
+            document.getElementById('successPanel').style.display = 'block';
+            
+            // Scroll to top
+            window.scrollTo(0, 0);
+        });
+
+        // Initialize
+        showStep(1);
+    </script>
     <script src="script.js"></script>
 </body>
 

@@ -10,6 +10,10 @@
         rel="stylesheet">
     <script src="https://unpkg.com/@phosphor-icons/web"></script>
     <link rel="stylesheet" href="styles.css">
+    <!-- Calendly link widget begin -->
+    <link href="https://assets.calendly.com/assets/external/widget.css" rel="stylesheet">
+    <script src="https://assets.calendly.com/assets/external/widget.js" type="text/javascript" async></script>
+    <!-- Calendly link widget end -->
     <script src="script.js"></script>
     <style>
         .contact-card {
@@ -75,10 +79,13 @@
                 <a href="solutions.html">Solutions</a>
                 <a href="portal.html">The Portal</a>
                 <a href="pricing.html">Pricing</a>
+                <a href="requests.html">Requests</a>
             </nav>
 
             <div class="header-right">
-                <a href="contact.html" class="btn-nav-cta">Book Discovery</a>
+                <a href=""
+                    onclick="Calendly.initPopupWidget({url: 'https://calendly.com/ops-boostwithlaunchpad/30min'});return false;"
+                    class="btn-nav-cta">Book Discovery</a>
                 <button class="mobile-menu-toggle">
                     <i class="ph ph-list"></i>
                 </button>
@@ -91,7 +98,10 @@
             <a href="solutions.html" style="padding: 0.5rem 0; color: #475569;">Solutions</a>
             <a href="portal.html" style="padding: 0.5rem 0; color: #475569;">The Portal</a>
             <a href="pricing.html" style="padding: 0.5rem 0; color: #475569;">Pricing</a>
-            <a href="contact.html" class="btn-primary" style="margin-top: 1rem; text-align: center;">Book Discovery</a>
+            <a href="requests.html" style="padding: 0.5rem 0; color: #475569;">Requests</a>
+            <a href=""
+                onclick="Calendly.initPopupWidget({url: 'https://calendly.com/ops-boostwithlaunchpad/30min'});return false;"
+                class="btn-primary" style="margin-top: 1rem; text-align: center;">Book Discovery</a>
         </div>
     </header>
 
@@ -151,8 +161,21 @@
 
                 <!-- Right Column: Form -->
                 <div>
+                    <div class="form-container"
+                        style="border: 2px solid var(--accent-primary); background: rgba(124, 58, 237, 0.05); text-align: center; margin-bottom: 2rem; padding: 2rem;">
+                        <h3 style="margin-bottom: 0.5rem; color: #0A1628;">Prefer a live discovery call?</h3>
+                        <p class="text-muted" style="margin-bottom: 1.5rem;">Skip the form and book a 45-minute
+                            discovery
+                            call directly with our team.</p>
+                        <a href=""
+                            onclick="Calendly.initPopupWidget({url: 'https://calendly.com/ops-boostwithlaunchpad/30min'});return false;"
+                            class="btn btn-primary"
+                            style="width: 100%; padding: 1rem; font-size: 1.1rem; border-radius: 6px;">Book
+                            a Discovery Call</a>
+                    </div>
+
                     <div class="form-container">
-                        <form action="https://formspree.io/f/xeeergwn" method="POST">
+                        <form id="contactForm" action="https://formspree.io/f/xeeergwn" method="POST">
                             <div style="margin-bottom: 1.5rem;">
                                 <label
                                     style="display: block; margin-bottom: 0.5rem; color: #0A1628; font-weight: 600;">Name</label>
@@ -186,7 +209,7 @@
                                     placeholder="How can we help?" required></textarea>
                             </div>
 
-                            <button type="submit" class="btn btn-primary"
+                            <button type="button" onclick="submitContact()" class="btn btn-primary"
                                 style="width: 100%; padding: 1rem; font-size: 1.1rem; border-radius: 6px;">Send
                                 Message</button>
                         </form>
@@ -195,6 +218,41 @@
 
             </div>
         </section>
+
+    </main>
+
+    <script>
+        function submitContact() {
+            var form = document.getElementById('contactForm');
+            var formData = new FormData(form);
+            var btn = form.querySelector('button');
+
+            // Basic validation
+            if (!form.checkValidity()) {
+                form.reportValidity();
+                return;
+            }
+
+            var dataObj = Object.fromEntries(formData.entries());
+            dataObj.timestamp = new Date().toISOString();
+            dataObj.id = 'sub_' + Date.now();
+            dataObj.meetEnabled = false;
+
+            // Save to localStorage
+            var submissions = JSON.parse(localStorage.getItem('launchpad_submissions') || '[]');
+            submissions.push(dataObj);
+            localStorage.setItem('launchpad_submissions', JSON.stringify(submissions));
+            localStorage.setItem('last_submission_id', dataObj.id);
+
+            btn.disabled = true;
+            btn.textContent = 'Sending...';
+
+            // Simulate submission and redirect
+            setTimeout(function () {
+                window.location.href = 'success.html';
+            }, 800);
+        }
+    </script>
 
     </main>
 
@@ -212,6 +270,7 @@
                     <a href="solutions.html">Solutions</a>
                     <a href="portal.html">The Portal</a>
                     <a href="pricing.html">Pricing</a>
+                    <a href="requests.html">Requests</a>
                 </div>
                 <div class="footer-col">
                     <h4>Legal</h4>
@@ -220,5 +279,17 @@
                 </div>
                 <div class="footer-col">
                     <h4>Contact</h4>
-                    <a href="contact.html">Schedule Call</a>
-                    <p style="color: #
+                    <a href=""
+                        onclick="Calendly.initPopupWidget({url: 'https://calendly.com/ops-boostwithlaunchpad/30min'});return false;">Schedule
+                        Call</a>
+                    <p style="color: #94A3B8; margin-top: 12px;">Palm Beach, USA</p>
+                </div>
+            </div>
+            <div class="footer-bottom">
+                &copy; 2025 Launchpad Automation. All rights reserved.
+            </div>
+        </div>
+    </footer>
+</body>
+
+</html>

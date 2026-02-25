@@ -10,6 +10,10 @@
         rel="stylesheet">
     <script src="https://unpkg.com/@phosphor-icons/web"></script>
     <link rel="stylesheet" href="styles.css">
+    <!-- Calendly link widget begin -->
+    <link href="https://assets.calendly.com/assets/external/widget.css" rel="stylesheet">
+    <script src="https://assets.calendly.com/assets/external/widget.js" type="text/javascript" async></script>
+    <!-- Calendly link widget end -->
     <script src="script.js"></script>
     <script>
         // Simple ROI Calculator Logic
@@ -37,10 +41,13 @@
                 <a href="solutions.html">Solutions</a>
                 <a href="portal.html">The Portal</a>
                 <a href="pricing.html" class="active">Pricing</a>
+                <a href="requests.html">Requests</a>
             </nav>
 
             <div class="header-right">
-                <a href="contact.html" class="btn-nav-cta">Book Discovery</a>
+                <a href=""
+                    onclick="Calendly.initPopupWidget({url: 'https://calendly.com/ops-boostwithlaunchpad/30min'});return false;"
+                    class="btn-nav-cta">Book Discovery</a>
                 <button class="mobile-menu-toggle">
                     <i class="ph ph-list"></i>
                 </button>
@@ -53,7 +60,10 @@
             <a href="solutions.html" style="padding: 0.5rem 0; color: #475569;">Solutions</a>
             <a href="portal.html" style="padding: 0.5rem 0; color: #475569;">The Portal</a>
             <a href="pricing.html" class="active" style="padding: 0.5rem 0; font-weight: 600;">Pricing</a>
-            <a href="contact.html" class="btn-primary" style="margin-top: 1rem; text-align: center;">Book Discovery</a>
+            <a href="requests.html" style="padding: 0.5rem 0; color: #475569;">Requests</a>
+            <a href=""
+                onclick="Calendly.initPopupWidget({url: 'https://calendly.com/ops-boostwithlaunchpad/30min'});return false;"
+                class="btn-primary" style="margin-top: 1rem; text-align: center;">Book Discovery</a>
         </div>
     </header>
 
@@ -133,7 +143,8 @@
                     </div>
 
                     <!-- Tier 3 -->
-                    <div class="pricing-card enterprise" style="background: #FFFFFF; border: 1px solid var(--border-light);">
+                    <div class="pricing-card enterprise"
+                        style="background: #FFFFFF; border: 1px solid var(--border-light);">
                         <h3>Enterprise</h3>
                         <p class="text-muted">Best for: Organizations needing on-prem or huge scale.</p>
                         <div class="price-tag">$4,000<span class="price-sub">/mo</span></div>
@@ -204,7 +215,9 @@
                 </div>
                 <div class="footer-col">
                     <h4>Contact</h4>
-                    <a href="contact.html">Schedule Call</a>
+                    <a href=""
+                        onclick="Calendly.initPopupWidget({url: 'https://calendly.com/ops-boostwithlaunchpad/30min'});return false;">Schedule
+                        Call</a>
                     <p style="color: #94A3B8; margin-top: 12px;">Palm Beach, USA</p>
                 </div>
             </div>

@@ -71,10 +71,47 @@
             </div>
 
             <div style="margin-top: 2rem;">
+                <div id="meetSection" style="margin-bottom: 2rem;">
+                    <button onclick="bookMeeting()" id="meetBtn" class="btn btn-gradient"
+                        style="width: 100%; display: flex; align-items: center; justify-content: center; gap: 0.5rem; padding: 1rem;">
+                        <i class="ph-bold ph-video-camera"></i> Book a Google Meet Call
+                    </button>
+                    <p id="meetStatus"
+                        style="font-size: 0.85rem; color: #166534; margin-top: 0.75rem; display: none; font-weight: 600;">
+                        <i class="ph-bold ph-check"></i> Meeting invitation enabled for this request!
+                    </p>
+                </div>
+
                 <a href="admin.html" style="color: var(--text-muted); font-size: 0.9rem; text-decoration: underline;">
                     Access Admin Dashboard (Simulation)
                 </a>
             </div>
+
+            <script>
+                function bookMeeting() {
+                    const lastId = localStorage.getItem('last_submission_id');
+                    if (!lastId) {
+                        alert("No recent submission found to link the meeting to.");
+                        return;
+                    }
+
+                    const submissions = JSON.parse(localStorage.getItem('launchpad_submissions') || '[]');
+                    const index = submissions.findIndex(s => s.id === lastId);
+
+                    if (index !== -1) {
+                        submissions[index].meetEnabled = true;
+                        localStorage.setItem('launchpad_submissions', JSON.stringify(submissions));
+
+                        const btn = document.getElementById('meetBtn');
+                        const status = document.getElementById('meetStatus');
+
+                        btn.disabled = true;
+                        btn.style.opacity = '0.7';
+                        btn.innerHTML = '<i class="ph-bold ph-check"></i> Call Booked';
+                        status.style.display = 'block';
+                    }
+                }
+            </script>
         </div>
     </div>
 

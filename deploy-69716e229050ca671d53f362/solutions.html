@@ -10,6 +10,10 @@
         rel="stylesheet">
     <script src="https://unpkg.com/@phosphor-icons/web"></script>
     <link rel="stylesheet" href="styles.css">
+    <!-- Calendly link widget begin -->
+    <link href="https://assets.calendly.com/assets/external/widget.css" rel="stylesheet">
+    <script src="https://assets.calendly.com/assets/external/widget.js" type="text/javascript" async></script>
+    <!-- Calendly link widget end -->
     <script src="script.js"></script>
     <style>
         .feature-box {
@@ -68,10 +72,13 @@
                 <a href="solutions.html" class="active">Solutions</a>
                 <a href="portal.html">The Portal</a>
                 <a href="pricing.html">Pricing</a>
+                <a href="requests.html">Requests</a>
             </nav>
 
             <div class="header-right">
-                <a href="contact.html" class="btn-nav-cta">Book Discovery</a>
+                <a href=""
+                    onclick="Calendly.initPopupWidget({url: 'https://calendly.com/ops-boostwithlaunchpad/30min'});return false;"
+                    class="btn-nav-cta">Book Discovery</a>
                 <button class="mobile-menu-toggle">
                     <i class="ph ph-list"></i>
                 </button>
@@ -84,7 +91,10 @@
             <a href="solutions.html" class="active" style="padding: 0.5rem 0; font-weight: 600;">Solutions</a>
             <a href="portal.html" style="padding: 0.5rem 0; color: #475569;">The Portal</a>
             <a href="pricing.html" style="padding: 0.5rem 0; color: #475569;">Pricing</a>
-            <a href="contact.html" class="btn-primary" style="margin-top: 1rem; text-align: center;">Book Discovery</a>
+            <a href="requests.html" style="padding: 0.5rem 0; color: #475569;">Requests</a>
+            <a href=""
+                onclick="Calendly.initPopupWidget({url: 'https://calendly.com/ops-boostwithlaunchpad/30min'});return false;"
+                class="btn-primary" style="margin-top: 1rem; text-align: center;">Book Discovery</a>
         </div>
     </header>
 
@@ -281,7 +291,9 @@
                 <h2>Ready to Build?</h2>
                 <p class="text-muted mt-1" style="max-width: 600px; margin: 0 auto 2rem auto;">Book a discovery call to
                     see if your agency is a good fit for our automation systems.</p>
-                <a href="contact.html" class="btn btn-primary">Schedule Discovery Call</a>
+                <a href=""
+                    onclick="Calendly.initPopupWidget({url: 'https://calendly.com/ops-boostwithlaunchpad/30min'});return false;"
+                    class="btn btn-primary">Schedule Discovery Call</a>
             </div>
         </section>
 
@@ -309,7 +321,9 @@
                 </div>
                 <div class="footer-col">
                     <h4>Contact</h4>
-                    <a href="contact.html">Schedule Call</a>
+                    <a href=""
+                        onclick="Calendly.initPopupWidget({url: 'https://calendly.com/ops-boostwithlaunchpad/30min'});return false;">Schedule
+                        Call</a>
                     <p style="color: #94A3B8; margin-top: 12px;">Palm Beach, USA</p>
                 </div>
             </div>
